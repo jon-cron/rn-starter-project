@@ -8,7 +8,8 @@ const StartScreen = () => {
     <>
       <Input placeholder="number" label="Number" />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
-      <PrimaryButton></PrimaryButton>
+      <PrimaryButton>Reset</PrimaryButton>
+      <PrimaryButton>Confirm</PrimaryButton>
     </>
   );
 };

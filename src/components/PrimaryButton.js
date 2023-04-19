@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-const PrimaryButton = ({ text }) => {
+const PrimaryButton = ({ children }) => {
   return (
     <View>
-      <Text>{text}</Text>
+      <Text>{children}</Text>
     </View>
   );
 };
