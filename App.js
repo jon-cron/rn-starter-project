@@ -3,14 +3,16 @@ import { StyleSheet, Text, View } from "react-native";
 
 import StartScreen from "./src/screens/StartScreen.jsx";
 export default function App() {
-  return <StartScreen />;
+  return (
+    <View style={styles.rootScreen}>
+      <StartScreen />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  rootScreen: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#ddb52f",
   },
 });
