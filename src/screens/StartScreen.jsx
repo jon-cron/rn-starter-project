@@ -23,8 +23,10 @@ const StartScreen = () => {
         autoCorrect={false}
       />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
-      <PrimaryButton>Reset</PrimaryButton>
-      <PrimaryButton>Confirm</PrimaryButton>
+      <View style={styles.btnContainer}>
+        <PrimaryButton>Reset</PrimaryButton>
+        <PrimaryButton>Confirm</PrimaryButton>
+      </View>
     </View>
   );
 };
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
     // NOTE flex: 1 makes sure that view takes up the entire space
     // flex: 1,
     padding: 16,
+    alignItems: "center",
     marginHorizontal: 24,
     marginTop: 50,
     backgroundColor: "#4e0329",
@@ -57,6 +60,9 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  btnContainer: {
+    flexDirection: "row",
   },
 });
 

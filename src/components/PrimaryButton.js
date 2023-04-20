@@ -9,6 +9,7 @@ const PrimaryButton = ({ children }) => {
     <View style={styles.buttonOuterContainer}>
       <Pressable
         // NOTE you do not have to use an array combine with a function. If you would like to add multiple styles you could write it like this "style:{[styles.btn, styles.container]}"
+        // NOTE we are using this pressed function to impact Apple Users UI
         style={({ pressed }) =>
           pressed
             ? [styles.buttonInnerContainer, styles.pressed]
