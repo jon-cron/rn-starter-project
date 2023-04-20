@@ -24,8 +24,12 @@ const StartScreen = () => {
       />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
       <View style={styles.btnContainer}>
-        <PrimaryButton>Reset</PrimaryButton>
-        <PrimaryButton>Confirm</PrimaryButton>
+        <View style={styles.btnSize}>
+          <PrimaryButton>Reset</PrimaryButton>
+        </View>
+        <View style={styles.btnSize}>
+          <PrimaryButton>Confirm</PrimaryButton>
+        </View>
       </View>
     </View>
   );
@@ -63,6 +67,10 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     flexDirection: "row",
+  },
+  btnSize: {
+    // width: "30%",
+    flex: 1,
   },
 });
 
