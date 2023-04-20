@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginHorizontal: 24,
     marginTop: 50,
-    backgroundColor: "#72063c",
+    backgroundColor: "#4e0329",
     borderRadius: 8,
     // NOTE elevation is android specific and will not effect apple apps
     elevation: 10,
