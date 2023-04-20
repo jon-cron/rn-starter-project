@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
   container: {
     // NOTE flex: 1 makes sure that view takes up the entire space
     flex: 1,
+    padding: 16,
+    marginTop: 50,
   },
 });
 
