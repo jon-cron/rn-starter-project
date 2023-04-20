@@ -13,7 +13,7 @@ import PrimaryButton from "../components/PrimaryButton.js";
 const StartScreen = () => {
   return (
     <View style={styles.container}>
-      <TextInput style={styles.numberInput} />
+      <TextInput style={styles.numberInput} maxLength={2} />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
@@ -40,10 +40,15 @@ const styles = StyleSheet.create({
   },
   numberInput: {
     height: 50,
+    width: 50,
     fontSize: 32,
     // NOTE unable to border until setting the width
     borderBottomColor: "#ddb52f",
     borderBottomWidth: 2,
+    color: "#ddb52f",
+    marginVertical: 8,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
 
