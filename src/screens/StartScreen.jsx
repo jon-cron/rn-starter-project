@@ -18,6 +18,9 @@ const StartScreen = () => {
         maxLength={2}
         // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
         keyboardType="number-pad"
+        // NOTE when making inputs keep in mind UI and what a bad experience it would be for a user to have autocap and autocorrect enabled when trying to type something like a password or email
+        autoCapitalize="none"
+        autoCorrect={false}
       />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
       <PrimaryButton>Reset</PrimaryButton>
