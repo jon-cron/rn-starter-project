@@ -13,7 +13,12 @@ import PrimaryButton from "../components/PrimaryButton.js";
 const StartScreen = () => {
   return (
     <View style={styles.container}>
-      <TextInput style={styles.numberInput} maxLength={2} />
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
+        keyboardType="number-pad"
+      />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
