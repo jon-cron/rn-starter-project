@@ -19,8 +19,17 @@ const styles = StyleSheet.create({
     // NOTE flex: 1 makes sure that view takes up the entire space
     // flex: 1,
     padding: 16,
+    marginHorizontal: 24,
     marginTop: 50,
     backgroundColor: "#72063c",
+    borderRadius: 8,
+    // NOTE elevation is android specific and will not effect apple apps
+    elevation: 5,
+    // NOTE using these 4 shadow features together will control the shadow on apple devices. I was unable to see any shadow until using all 4
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 10 },
+    shadowRadius: 6,
+    shadowOpacity: 0.25,
   },
 });
 
