@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 // NOTE to use this first run "npm install react-native-safe-area-view"
 import SafeAreaView, { SafeAreaProvider } from "react-native-safe-area-view";
 // NOTE must run expo install expo-linear-gradient
@@ -11,11 +11,16 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.rootScreen}>
-        <LinearGradient
-          colors={["#4e0329", "#fff", "#ddb52f"]}
-          style={{ flex: 1 }}
-        >
-          <StartScreen />
+        <LinearGradient colors={["#4e0329", "#ddb52f"]} style={{ flex: 1 }}>
+          {/* NOTE ImageBackground is a combination of a View and Image. To style the view we simply style the comp but to style the image we must target imageStyle as seen below */}
+          <ImageBackground
+            source={require("./assets/images/background.png")}
+            resizeMode="cover"
+            style={styles.rootScreen}
+            imageStyle={{ opacity: 0.2 }}
+          >
+            <StartScreen />
+          </ImageBackground>
         </LinearGradient>
       </SafeAreaView>
     </SafeAreaProvider>
