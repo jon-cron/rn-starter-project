@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -11,9 +11,16 @@ import { Input } from "react-native-elements";
 import PrimaryButton from "../components/PrimaryButton.js";
 
 const StartScreen = () => {
+  const [enteredNumber, setEnteredNumber] = useState("");
+  const numberHandler = (enteredText) => {
+    setEnteredNumber(enteredText);
+  };
+  const handleConfirm = () => {};
   return (
     <View style={styles.container}>
       <TextInput
+        onChangeText={numberHandler}
+        value={enteredNumber}
         style={styles.numberInput}
         maxLength={2}
         // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
