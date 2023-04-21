@@ -6,6 +6,7 @@ import {
   Button,
   TouchableOpacity,
   TextInput,
+  Alert,
 } from "react-native";
 import { Input } from "react-native-elements";
 import PrimaryButton from "../components/PrimaryButton.js";
@@ -15,7 +16,18 @@ const StartScreen = () => {
   const numberHandler = (enteredText) => {
     setEnteredNumber(enteredText);
   };
-  const handleConfirm = () => {};
+  const handleConfirm = () => {
+    const chosenNumber = parseInt(enteredNumber);
+    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+      // NOTE this Alert uses native alert systems for android and apple
+      Alert.alert(
+        "Invalid Number",
+        "Number has to be a number between 1 and 99",
+        [{ text: "Okay", style: "destructive" }]
+      );
+      return;
+    }
+  };
   return (
     <View style={styles.container}>
       <TextInput
@@ -35,7 +47,7 @@ const StartScreen = () => {
           <PrimaryButton>Reset</PrimaryButton>
         </View>
         <View style={styles.btnSize}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
         </View>
       </View>
     </View>
