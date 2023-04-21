@@ -17,7 +17,7 @@ export default function App() {
             source={require("./assets/images/background.png")}
             resizeMode="cover"
             style={styles.rootScreen}
-            imageStyle={{ opacity: 0.2 }}
+            imageStyle={{ opacity: 0.15 }}
           >
             <StartScreen />
           </ImageBackground>
