@@ -11,7 +11,7 @@ import {
 import { Input } from "react-native-elements";
 import PrimaryButton from "../components/PrimaryButton.js";
 
-const StartScreen = () => {
+const StartScreen = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
   const numberHandler = (enteredText) => {
     setEnteredNumber(enteredText);
@@ -31,6 +31,7 @@ const StartScreen = () => {
       );
       return;
     }
+    onPickNumber(chosenNumber);
   };
   return (
     <View style={styles.container}>

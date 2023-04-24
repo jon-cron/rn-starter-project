@@ -7,7 +7,17 @@ import SafeAreaView, { SafeAreaProvider } from "react-native-safe-area-view";
 
 import StartScreen from "./src/screens/StartScreen.jsx";
 import { LinearGradient } from "expo-linear-gradient";
+import { useState } from "react";
+import GameScreen from "./src/screens/GameScreen.jsx";
 export default function App() {
+  const [userNumber, setUserNumber] = useState();
+  const pickedNumberHandler = (pickedNumber) => {
+    setUserNumber(pickedNumber);
+  };
+  let screen = <StartScreen onPickNumber={pickedNumberHandler} />;
+  if (userNumber) {
+    screen = <GameScreen />;
+  }
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.rootScreen}>
@@ -19,7 +29,7 @@ export default function App() {
             style={styles.rootScreen}
             imageStyle={{ opacity: 0.15 }}
           >
-            <StartScreen />
+            {screen}
           </ImageBackground>
         </LinearGradient>
       </SafeAreaView>
