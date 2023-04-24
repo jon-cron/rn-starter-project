@@ -14,6 +14,7 @@ import StartScreen from "./src/screens/StartScreen.jsx";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import GameScreen from "./src/screens/GameScreen.jsx";
+import Colors from "./src/utilities/colors.js";
 export default function App() {
   const [userNumber, setUserNumber] = useState();
   const pickedNumberHandler = (pickedNumber) => {
@@ -21,10 +22,13 @@ export default function App() {
   };
   let screen = <StartScreen onPickNumber={pickedNumberHandler} />;
   if (userNumber) {
-    screen = <GameScreen />;
+    screen = <GameScreen userNumber={userNumber} />;
   }
   return (
-    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={{ flex: 1 }}>
+    <LinearGradient
+      colors={[Colors.primary500, Colors.secondary500]}
+      style={{ flex: 1 }}
+    >
       {/* NOTE ImageBackground is a combination of a View and Image. To style the view we simply style the comp but to style the image we must target imageStyle as seen below */}
       <ImageBackground
         source={require("./assets/images/background.png")}

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { Input } from "react-native-elements";
 import PrimaryButton from "../components/PrimaryButton.js";
+import Colors from "../utilities/colors.js";
 
 const StartScreen = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 24,
     marginTop: 50,
-    backgroundColor: "#4e0329",
+    backgroundColor: Colors.primary700,
     borderRadius: 8,
     // NOTE elevation is android specific and will not effect apple apps
     elevation: 10,
@@ -82,9 +83,9 @@ const styles = StyleSheet.create({
     width: 50,
     fontSize: 32,
     // NOTE unable to border until setting the width
-    borderBottomColor: "#ddb52f",
+    borderBottomColor: Colors.secondary500,
     borderBottomWidth: 2,
-    color: "#ddb52f",
+    color: Colors.secondary500,
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
