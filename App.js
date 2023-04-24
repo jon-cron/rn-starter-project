@@ -1,7 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  SafeAreaView,
+} from "react-native";
 // NOTE to use this first run "npm install react-native-safe-area-view"
-import SafeAreaView, { SafeAreaProvider } from "react-native-safe-area-view";
 // NOTE must run expo install expo-linear-gradient
 // import { LinearGradient } from "expo-linear-gradient";
 
@@ -19,21 +24,17 @@ export default function App() {
     screen = <GameScreen />;
   }
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.rootScreen}>
-        <LinearGradient colors={["#4e0329", "#ddb52f"]} style={{ flex: 1 }}>
-          {/* NOTE ImageBackground is a combination of a View and Image. To style the view we simply style the comp but to style the image we must target imageStyle as seen below */}
-          <ImageBackground
-            source={require("./assets/images/background.png")}
-            resizeMode="cover"
-            style={styles.rootScreen}
-            imageStyle={{ opacity: 0.15 }}
-          >
-            {screen}
-          </ImageBackground>
-        </LinearGradient>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={{ flex: 1 }}>
+      {/* NOTE ImageBackground is a combination of a View and Image. To style the view we simply style the comp but to style the image we must target imageStyle as seen below */}
+      <ImageBackground
+        source={require("./assets/images/background.png")}
+        resizeMode="cover"
+        style={styles.rootScreen}
+        imageStyle={{ opacity: 0.15 }}
+      >
+        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+      </ImageBackground>
+    </LinearGradient>
   );
 }
 
