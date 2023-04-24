@@ -21,6 +21,7 @@ const StartScreen = () => {
   };
   const handleConfirm = () => {
     const chosenNumber = parseInt(enteredNumber);
+    // NOTE isNaN is a function that checks to see if a variable is a number and returns a boolean
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
       // NOTE this Alert uses native alert systems for android and apple
       Alert.alert(
