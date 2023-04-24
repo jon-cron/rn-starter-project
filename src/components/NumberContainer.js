@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View, StyleSheet, Button, Pressable } from "react-native";
 
-const NumberContainer = ({ number }) => {
+const NumberContainer = ({ children }) => {
   return (
     <View>
-      <Text>{number}</Text>
+      <Text>{children}</Text>
     </View>
   );
 };
