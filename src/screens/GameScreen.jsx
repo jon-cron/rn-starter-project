@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#ddb52f",
     textAlign: "center",
+    borderWidth: 2,
+    borderColor: "#ddb52f",
+    padding: 12,
   },
 });
 
