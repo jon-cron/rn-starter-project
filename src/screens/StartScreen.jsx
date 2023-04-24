@@ -16,6 +16,9 @@ const StartScreen = () => {
   const numberHandler = (enteredText) => {
     setEnteredNumber(enteredText);
   };
+  const resetInput = () => {
+    setEnteredNumber("");
+  };
   const handleConfirm = () => {
     const chosenNumber = parseInt(enteredNumber);
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
@@ -23,7 +26,7 @@ const StartScreen = () => {
       Alert.alert(
         "Invalid Number",
         "Number has to be a number between 1 and 99",
-        [{ text: "Okay", style: "destructive" }]
+        [{ text: "Okay", style: "destructive", onPress: resetInput }]
       );
       return;
     }
@@ -37,14 +40,14 @@ const StartScreen = () => {
         maxLength={2}
         // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
         keyboardType="number-pad"
-        // NOTE when making inputs keep in mind UI and what a bad experience it would be for a user to have autocap and autocorrect enabled when trying to type something like a password or email
+        // NOTE when making inputs keep in mind UI and what a bad experience it would be for a user to have autocap and autocorrect enabled when trying to type something like a password or email.
         autoCapitalize="none"
         autoCorrect={false}
       />
       {/* NOTE we are wrapping our text in the comp and using children to render different text */}
       <View style={styles.btnContainer}>
         <View style={styles.btnSize}>
-          <PrimaryButton>Reset</PrimaryButton>
+          <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
         </View>
         <View style={styles.btnSize}>
           <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
