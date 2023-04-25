@@ -28,6 +28,7 @@ const GameScreen = ({ userNumber }) => {
     } else if (direction === "higher") {
       minBoundary = currentGuess + 1;
     }
+    console.log(minBoundary, maxBoundary);
     const newRndNumber = randomNumberBetween(
       minBoundary,
       maxBoundary,
@@ -42,8 +43,12 @@ const GameScreen = ({ userNumber }) => {
       <View>
         <Text>Higher or Lower</Text>
         <View style={styles.btnContainer}>
-          <PrimaryButton onPress={() => handleGuess("higher")}>+</PrimaryButton>
-          <PrimaryButton onPress={() => handleGuess("lower")}>-</PrimaryButton>
+          <PrimaryButton onPress={handleGuess.bind(this, "higher")}>
+            +
+          </PrimaryButton>
+          <PrimaryButton onPress={handleGuess.bind(this, "lower")}>
+            -
+          </PrimaryButton>
         </View>
       </View>
       <View></View>
