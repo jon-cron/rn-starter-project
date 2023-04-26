@@ -23,6 +23,11 @@ const GameScreen = ({ userNumber }) => {
   );
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const handleGuess = (direction) => {
+    if (
+      (direction === "lower" && currentGuess < userNumber) ||
+      (direction === "higher" && currentGuess > userNumber)
+    ) {
+    }
     if (direction === "lower") {
       maxBoundary = currentGuess;
     } else if (direction === "higher") {
