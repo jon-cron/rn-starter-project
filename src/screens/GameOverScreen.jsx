@@ -1,8 +1,12 @@
 import React from "react";
-import { Text, View, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Button, Pressable } from "react-native";
 
 const GameOverScreen = () => {
-  return <View></View>;
+  return (
+    <View>
+      <Text>Game is over</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({});
