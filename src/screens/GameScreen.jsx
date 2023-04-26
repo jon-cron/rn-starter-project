@@ -17,11 +17,7 @@ const randomNumberBetween = (min, max, exclude) => {
 let minBoundary = 1;
 let maxBoundary = 100;
 const GameScreen = ({ userNumber, onGameOver }) => {
-  const initialGuess = randomNumberBetween(
-    minBoundary,
-    maxBoundary,
-    userNumber
-  );
+  const initialGuess = randomNumberBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   useEffect(() => {
     if (currentGuess === userNumber) {

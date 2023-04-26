@@ -11,6 +11,7 @@ import {
 import { Input } from "react-native-elements";
 import PrimaryButton from "../components/PrimaryButton.js";
 import Colors from "../utilities/colors.js";
+import Title from "../components/Title.jsx";
 
 const StartScreen = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -35,25 +36,28 @@ const StartScreen = ({ onPickNumber }) => {
     onPickNumber(chosenNumber);
   };
   return (
-    <View style={styles.container}>
-      <TextInput
-        onChangeText={numberHandler}
-        value={enteredNumber}
-        style={styles.numberInput}
-        maxLength={2}
-        // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
-        keyboardType="number-pad"
-        // NOTE when making inputs keep in mind UI and what a bad experience it would be for a user to have autocap and autocorrect enabled when trying to type something like a password or email.
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
-      {/* NOTE we are wrapping our text in the comp and using children to render different text */}
-      <View style={styles.btnContainer}>
-        <View style={styles.btnSize}>
-          <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
-        </View>
-        <View style={styles.btnSize}>
-          <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+    <View style={{ marginTop: 100, alignItems: "center" }}>
+      <Title>Guess My Number</Title>
+      <View style={styles.container}>
+        <TextInput
+          onChangeText={numberHandler}
+          value={enteredNumber}
+          style={styles.numberInput}
+          maxLength={2}
+          // NOTE look at the docs to see the types of inputs. 'number-pad' changes multiple platforms keyboards types
+          keyboardType="number-pad"
+          // NOTE when making inputs keep in mind UI and what a bad experience it would be for a user to have autocap and autocorrect enabled when trying to type something like a password or email.
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+        {/* NOTE we are wrapping our text in the comp and using children to render different text */}
+        <View style={styles.btnContainer}>
+          <View style={styles.btnSize}>
+            <PrimaryButton onPress={resetInput}>Reset</PrimaryButton>
+          </View>
+          <View style={styles.btnSize}>
+            <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+          </View>
         </View>
       </View>
     </View>
@@ -67,7 +71,7 @@ const styles = StyleSheet.create({
     padding: 16,
     alignItems: "center",
     marginHorizontal: 24,
-    marginTop: 50,
+    marginTop: 10,
     backgroundColor: Colors.primary700,
     borderRadius: 8,
     // NOTE elevation is android specific and will not effect apple apps
