@@ -39,6 +39,9 @@ const StartScreen = ({ onPickNumber }) => {
     <View style={{ marginTop: 100, alignItems: "center" }}>
       <Title>Guess My Number</Title>
       <View style={styles.container}>
+        <Text style={{ color: Colors.secondary500, fontSize: 24 }}>
+          Enter a number
+        </Text>
         <TextInput
           onChangeText={numberHandler}
           value={enteredNumber}
