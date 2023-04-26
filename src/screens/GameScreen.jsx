@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Button } from "react-native";
 import Title from "../components/Title.jsx";
 import NumberContainer from "../components/NumberContainer.js";
 import PrimaryButton from "../components/PrimaryButton.js";
+import { Alert } from "react-native";
 
 const randomNumberBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -27,6 +28,13 @@ const GameScreen = ({ userNumber }) => {
       (direction === "lower" && currentGuess < userNumber) ||
       (direction === "higher" && currentGuess > userNumber)
     ) {
+      Alert.alert("Don't lie", "You know that is wrong", [
+        {
+          text: "Sorry!",
+          style: "cancel",
+        },
+      ]);
+      return;
     }
     if (direction === "lower") {
       maxBoundary = currentGuess;
